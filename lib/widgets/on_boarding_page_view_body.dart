@@ -43,6 +43,7 @@ class _OnBoardingPageViewBodyState extends State<OnBoardingPageViewBody> {
         PageIndicatorAndButton(
           currentPage: currentPage,
           pageController: pageController,
+          totalPages: 2,
         ),
         const SizedBox(height: 40),
       ],

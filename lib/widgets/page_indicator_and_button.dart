@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_indicator/core/utils/app_colors.dart';
+import 'package:smooth_indicator/pages/home_page.dart';
 import 'package:smooth_indicator/widgets/custom_circle_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -8,8 +9,11 @@ class PageIndicatorAndButton extends StatelessWidget {
     super.key,
     required this.pageController,
     required this.currentPage,
+    required this.totalPages,
   });
+
   final int currentPage;
+  final int totalPages;
   final PageController pageController;
 
   @override
@@ -19,11 +23,11 @@ class PageIndicatorAndButton extends StatelessWidget {
       child: Row(
         children: [
           SmoothPageIndicator(
-            count: 2,
+            count: totalPages,
             controller: pageController,
             effect: ExpandingDotsEffect(
               activeDotColor: AppColors.primaryColor,
-              dotColor: currentPage == 1
+              dotColor: currentPage == totalPages - 1
                   ? AppColors.primaryColor
                   : AppColors.primaryColor.withOpacity(0.5),
               dotHeight: 10,
@@ -41,13 +45,17 @@ class PageIndicatorAndButton extends StatelessWidget {
           const Spacer(),
           CustomCircleButton(
             onPressed: () {
-              if (currentPage == 1) {
-              } else {
-                pageController.nextPage(
-                  duration: const Duration(milliseconds: 400),
-                  curve: Curves.easeInOut,
+              if (currentPage == totalPages - 1) {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const HomePage(),
+                  ),
                 );
               }
+              pageController.nextPage(
+                duration: const Duration(milliseconds: 400),
+                curve: Curves.easeInOut,
+              );
             },
           ),
         ],
