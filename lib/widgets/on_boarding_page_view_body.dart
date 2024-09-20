@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_indicator/widgets/on_boarding_page_app_bar.dart';
 import 'package:smooth_indicator/widgets/on_boarding_page_view.dart';
-import 'package:smooth_indicator/widgets/page_indicator_and_button.dart';
 
 class OnBoardingPageViewBody extends StatefulWidget {
   const OnBoardingPageViewBody({super.key});
@@ -40,12 +39,6 @@ class _OnBoardingPageViewBodyState extends State<OnBoardingPageViewBody> {
             controller: pageController,
           ),
         ),
-        PageIndicatorAndButton(
-          currentPage: currentPage,
-          pageController: pageController,
-          totalPages: 2,
-        ),
-        const SizedBox(height: 40),
       ],
     );
   }
