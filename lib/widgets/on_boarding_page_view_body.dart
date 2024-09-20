@@ -45,7 +45,7 @@ class _OnBoardingPageViewBodyState extends State<OnBoardingPageViewBody> {
           pageController: pageController,
           totalPages: 2,
         ),
-        const SizedBox(height: 40),
+        const SizedBox(height: 36),
       ],
     );
   }
