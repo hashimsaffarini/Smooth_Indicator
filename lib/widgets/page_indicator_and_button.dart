@@ -19,7 +19,7 @@ class PageIndicatorAndButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 14),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
         children: [
           SmoothPageIndicator(
