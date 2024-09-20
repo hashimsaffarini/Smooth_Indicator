@@ -14,6 +14,7 @@ class PageIndicatorAndButton extends StatelessWidget {
 
   final int currentPage;
   final int totalPages;
+  
   final PageController pageController;
 
   @override
