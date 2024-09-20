@@ -27,9 +27,7 @@ class PageIndicatorAndButton extends StatelessWidget {
             controller: pageController,
             effect: ExpandingDotsEffect(
               activeDotColor: AppColors.primaryColor,
-              dotColor: currentPage == totalPages - 1
-                  ? AppColors.primaryColor
-                  : AppColors.primaryColor.withOpacity(0.5),
+              dotColor: AppColors.primaryColor.withOpacity(0.5),
               dotHeight: 10,
               dotWidth: 12,
               spacing: 8,
